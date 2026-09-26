@@ -7,14 +7,14 @@ export default function RecognitionQuote() {
   return (
     <div className="mt-28">
       <Reveal>
-        <figure className="relative mx-auto max-w-4xl text-center">
+        <figure className="mx-auto max-w-4xl text-center">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 select-none font-display text-[130px] leading-none text-warm-accent opacity-25 md:-top-24 md:text-[170px]"
+            className="mx-auto block h-16 select-none overflow-hidden font-display text-[120px] leading-[1.1] text-warm-accent opacity-50 md:h-20 md:text-[150px]"
           >
             &ldquo;
           </span>
-          <blockquote className="relative font-display text-2xl font-semibold leading-snug text-navy md:text-[40px]">
+          <blockquote className="mt-3 font-display text-2xl font-semibold leading-snug text-navy md:text-[40px]">
             {text}
           </blockquote>
           <div className="mx-auto mt-8 h-1 w-16 rounded-full bg-gradient-warm" />

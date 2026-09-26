@@ -74,7 +74,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
           <a
             href={profile.resumeUrl}
             download
-            className="inline-flex items-center gap-2 rounded-full border border-navy/20 px-4 py-2 text-sm font-semibold text-navy transition-colors hover:border-accent-from hover:text-accent-from dark:border-white/20 dark:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-navy/20 px-4 py-2 text-sm font-semibold text-navy transition-colors hover:border-accent-from hover:text-accent-ink dark:border-white/20 dark:text-white"
           >
             <Download size={15} />
             Download Resume

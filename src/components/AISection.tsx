@@ -14,7 +14,7 @@ export default function AISection() {
       />
       <div className="container-page relative">
         <Reveal>
-          <span className="inline-block rounded-full border border-accent-from/30 bg-accent-from/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-from">
+          <span className="inline-block rounded-full border border-accent-from/30 bg-accent-from/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-ink">
             {aiSection.label}
           </span>
           <h2 className="mt-5 max-w-2xl text-[32px] font-bold leading-tight text-navy md:text-[44px]">
@@ -29,7 +29,7 @@ export default function AISection() {
             return (
               <Reveal key={card.title} delay={0.1 + i * 0.08}>
                 <div className="group h-full rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-surface-2 text-accent-from transition-colors group-hover:bg-gradient-accent group-hover:text-white">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-surface-2 text-accent-ink transition-colors group-hover:bg-gradient-accent group-hover:text-white">
                     <Icon size={20} />
                   </div>
                   <h3 className="mt-4 text-base font-bold text-navy">{card.title}</h3>

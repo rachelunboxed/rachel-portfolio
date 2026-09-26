@@ -155,7 +155,7 @@ export default function SettingsApp() {
               href="https://github.com/settings/personal-access-tokens/new"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-accent-from underline"
+              className="font-semibold text-accent-ink underline"
             >
               fine-grained personal access token
             </a>{' '}

@@ -7,6 +7,7 @@ export default function CaseStudies() {
     <section id="projects" className="py-24 md:py-32">
       <div className="container-page">
         <SectionHeading
+          eyebrow="Selected work"
           title="Featured Projects"
           subtitle="Products I've conceived, built, and shipped."
         />

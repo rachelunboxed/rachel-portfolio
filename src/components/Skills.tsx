@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 md:py-32">
       <div className="container-page">
-        <SectionHeading title="Skills & Tools" />
+        <SectionHeading eyebrow="Toolkit" title="Skills & Tools" />
 
         <Reveal delay={0.1}>
           <div className="mt-14 flex flex-wrap gap-3">

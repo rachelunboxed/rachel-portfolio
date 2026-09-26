@@ -25,9 +25,9 @@ export default function HeroVisual() {
         aria-label="Diagram showing Product at the center, connected to Business, Customer, Technology, and Team"
       >
         <defs>
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2563EB" />
-            <stop offset="100%" stopColor="#7C3AED" />
+          <linearGradient id="lineGradient" gradientUnits="userSpaceOnUse" x1="70" y1="70" x2="430" y2="430">
+            <stop offset="0%" stopColor="var(--warm-accent)" />
+            <stop offset="100%" stopColor="var(--warm-accent-2)" />
           </linearGradient>
         </defs>
 

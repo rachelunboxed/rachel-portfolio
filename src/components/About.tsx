@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="container-page">
-        <SectionHeading title={about.title} subtitle={about.intro} />
+        <SectionHeading eyebrow="Who I am" title={about.title} subtitle={about.intro} />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal className="lg:col-span-3" delay={0.1}>

@@ -1,10 +1,10 @@
-import { useRef, useState } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { useState } from 'react';
 import { Award, Flag, Maximize2, RefreshCcw, ShieldCheck, type LucideIcon } from 'lucide-react';
 import { recognition, type TimelineEvent } from '../../data/content';
 import { timelinePhotoUrlPath } from '../../data/recognitionMoments';
 import { useAssetExists } from '../../hooks/useAssetExists';
 import Reveal from '../Reveal';
+import TimelineList from '../TimelineList';
 import Lightbox from './Lightbox';
 
 const eventIcons: Record<string, LucideIcon> = {
@@ -60,9 +60,6 @@ function TimelineStep({ event, delay }: { event: TimelineEvent; delay: number })
 
 export default function AchievementTimeline() {
   const { title, events } = recognition.timeline;
-  const listRef = useRef<HTMLOListElement>(null);
-  const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 75%', 'end 60%'] });
-  const fill = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
     <div className="mt-24">
@@ -72,17 +69,11 @@ export default function AchievementTimeline() {
         </h3>
       </Reveal>
 
-      <ol ref={listRef} className="relative mt-10 max-w-4xl">
-        <span aria-hidden="true" className="absolute bottom-6 left-5 top-6 w-0.5 -translate-x-1/2 bg-warm-border" />
-        <motion.span
-          aria-hidden="true"
-          style={{ scaleY: fill, transformOrigin: 'top' }}
-          className="absolute bottom-6 left-5 top-6 w-0.5 -translate-x-1/2 bg-gradient-warm"
-        />
+      <TimelineList className="mt-10">
         {events.map((event, i) => (
           <TimelineStep key={event.id} event={event} delay={i * 0.05} />
         ))}
-      </ol>
+      </TimelineList>
     </div>
   );
 }

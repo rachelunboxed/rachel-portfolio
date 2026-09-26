@@ -41,7 +41,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32">
       <div className="container-page">
-        <SectionHeading title={contact.title} subtitle={contact.text} />
+        <SectionHeading eyebrow="Get in touch" title={contact.title} subtitle={contact.text} />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal className="lg:col-span-3">
@@ -129,7 +129,7 @@ export default function Contact() {
             <div className="space-y-5 rounded-2xl border border-border bg-surface-2/60 p-7">
               {emailConfigured ? (
                 <div className="flex items-start gap-3">
-                  <Mail size={18} className="mt-0.5 text-accent-from" />
+                  <Mail size={18} className="mt-0.5 text-accent-ink" />
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted">Email</p>
                     <p className="text-sm font-medium text-slate">{profile.email}</p>
@@ -138,7 +138,7 @@ export default function Contact() {
               ) : null}
               {phoneConfigured ? (
                 <div className="flex items-start gap-3">
-                  <Phone size={18} className="mt-0.5 text-accent-from" />
+                  <Phone size={18} className="mt-0.5 text-accent-ink" />
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted">Phone</p>
                     <p className="text-sm font-medium text-slate">{profile.phone}</p>
@@ -146,21 +146,21 @@ export default function Contact() {
                 </div>
               ) : null}
               <div className="flex items-start gap-3">
-                <LinkedinGlyph size={18} className="mt-0.5 text-accent-from" />
+                <LinkedinGlyph size={18} className="mt-0.5 text-accent-ink" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted">LinkedIn</p>
                   <p className="text-sm font-medium text-slate">{profile.linkedin}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <GithubGlyph size={18} className="mt-0.5 text-accent-from" />
+                <GithubGlyph size={18} className="mt-0.5 text-accent-ink" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted">GitHub</p>
                   <p className="text-sm font-medium text-slate">{profile.github}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="mt-0.5 text-accent-from" />
+                <MapPin size={18} className="mt-0.5 text-accent-ink" />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted">Location</p>
                   <p className="text-sm font-medium text-slate">{profile.location}</p>

@@ -23,7 +23,7 @@ export default function ResumeCTA() {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-navy/15 px-6 py-3.5 text-sm font-semibold text-navy transition-colors hover:border-accent-from hover:text-accent-from dark:border-white/20 dark:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-navy/15 px-6 py-3.5 text-sm font-semibold text-navy transition-colors hover:border-accent-from hover:text-accent-ink dark:border-white/20 dark:text-white"
             >
               <Mail size={16} />
               Get In Touch

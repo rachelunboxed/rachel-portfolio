@@ -6,6 +6,10 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/rachel-portfolio/',
   plugins: [react()],
+  server: {
+    port: process.env.PORT ? Number(process.env.PORT) : undefined,
+    strictPort: Boolean(process.env.PORT),
+  },
   build: {
     rollupOptions: {
       input: {
