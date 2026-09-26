@@ -25,6 +25,7 @@ export const navLinks = [
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Recognition', href: '#recognition' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -289,8 +290,15 @@ export const caseStudies: CaseStudy[] = [
     index: 'Project 05',
     category: 'Internal AI Platform',
     title: 'Cogniverse',
-    role: "Product Manager for Cognizant's internal AI workforce and community platform.",
-    summary: 'Defining roadmap and driving adoption of an internal AI initiative.',
+    problem:
+      'Employee skills, project opportunities, and workplace communities were scattered across group chats and email threads, with no single place to connect them.',
+    role: "Product Owner for Cognizant's internal AI workforce and community platform.",
+    highlights: [
+      'Bench Connect: real-time visibility of employees on the bench, so managers can search by skill and find available talent without manual group chats or email coordination',
+      'Project Matching: employees upload their skills and are matched to open projects, with a match percentage and the missing skills they need to qualify, cutting unnecessary emails and encouraging upskilling',
+      'Guild Connect: connects employees with the same technical expertise (developers, QA, DevOps) for knowledge sharing, mentorship, and professional growth',
+      'Club Connect: connects employees across skill sets through shared interests and hobbies, strengthening collaboration and company culture',
+    ],
   },
 ];
 
@@ -367,6 +375,184 @@ export const certifications: Certification[] = [
     year: '2021',
   },
 ];
+
+export const recognitionCategories = [
+  'Teamwork',
+  'Problem Solving',
+  'Leadership',
+  'Customer Focus',
+  'Innovation',
+  'Adaptability',
+  'Mentoring',
+  'Going the Extra Mile',
+  'Continuous Improvement',
+] as const;
+
+export const recognitionKinds = [
+  'Team appreciation message',
+  'Recognition certificate',
+  'Screenshot of feedback',
+  'Team award',
+  'Thank-you message',
+  'Client appreciation',
+  'Sprint celebration photo',
+  'Team event',
+  'Recognition email',
+] as const;
+
+export const anonymizedLabels = [
+  'Former Enterprise Client',
+  'Production Support Team',
+  'Agile Delivery Team',
+  'Business Stakeholder',
+];
+
+export type RecognitionWallCard = {
+  id: string;
+  team: string;
+  did: string;
+  why: string;
+  tags: string[];
+  categories: string[];
+};
+
+export type TimelineEvent = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export const recognition = {
+  eyebrow: 'Recognition Matters',
+  title: 'Celebrating the People Behind the Delivery',
+  subtitle: 'Great delivery is never a one-person achievement.',
+  intro: [
+    "As Scrum Masters and delivery leaders, we often become the visible face of a team's success. But behind every successful release, resolved incident, completed sprint, or satisfied stakeholder is a team of people who made it happen.",
+    'I believe recognition should not stop with leadership. The people doing the work deserve to be seen, appreciated, and celebrated too.',
+  ],
+  philosophy: {
+    statement:
+      "A leader's success is not just what they accomplish personally, but how well they help others feel seen, valued, and empowered to succeed.",
+    principles: [
+      {
+        title: 'Recognize the Team',
+        description: 'Celebrate collective achievements, not just individual contributions.',
+      },
+      {
+        title: 'Make Contributions Visible',
+        description: 'Highlight the people whose work may happen behind the scenes.',
+      },
+      {
+        title: 'Celebrate Progress',
+        description:
+          "Recognition doesn't have to wait for a major milestone. Small improvements, teamwork, and persistence matter too.",
+      },
+    ],
+  },
+  wall: {
+    title: 'Team Recognition Wall',
+    cards: [
+      {
+        id: 'production-support-team',
+        team: 'Production Support Team',
+        did: 'Worked together to resolve a complex production issue while maintaining communication with business stakeholders.',
+        why: 'Their collaboration helped minimize disruption and kept stakeholders informed throughout the resolution.',
+        tags: ['Teamwork', 'Problem Solving', 'Ownership'],
+        categories: ['Teamwork', 'Problem Solving'],
+      },
+      {
+        id: 'scrum-team',
+        team: 'Scrum Team',
+        did: 'Worked collaboratively to navigate changing requirements while maintaining focus on the sprint goal.',
+        why: 'The team demonstrated adaptability and maintained delivery momentum despite changing priorities.',
+        tags: ['Adaptability', 'Collaboration', 'Delivery'],
+        categories: ['Adaptability', 'Teamwork'],
+      },
+    ] satisfies RecognitionWallCard[],
+  },
+  behindTheScenes: {
+    title: 'The People Behind the Scenes',
+    text: "Some of the most important contributions are not always visible. The person who stayed late to investigate an issue, the teammate who helped someone understand a complex requirement, the analyst who caught a potential problem early, or the team member who quietly kept everyone moving forward can make a significant difference.",
+    cards: [
+      {
+        title: 'The Problem Solver',
+        description: 'For someone who stepped in when a difficult issue needed investigation.',
+      },
+      {
+        title: 'The Connector',
+        description: 'For someone who helped bridge communication between teams.',
+      },
+      {
+        title: 'The Quiet Contributor',
+        description: "For someone whose work was essential even when they weren't in the spotlight.",
+      },
+      {
+        title: 'The Team Player',
+        description: 'For someone who consistently supported others.',
+      },
+      {
+        title: 'The Improvement Champion',
+        description: 'For someone who helped make a process better.',
+      },
+    ],
+  },
+  timeline: {
+    title: 'Team Achievement Timeline',
+    events: [
+      {
+        id: 'sprint-milestone',
+        title: 'Sprint Milestone',
+        description: 'Team successfully completed a challenging delivery milestone.',
+      },
+      {
+        id: 'production-achievement',
+        title: 'Production Achievement',
+        description: 'Team resolved a complex production issue.',
+      },
+      {
+        id: 'process-improvement',
+        title: 'Process Improvement',
+        description: 'Team introduced a better way of working.',
+      },
+      {
+        id: 'client-recognition',
+        title: 'Client Recognition',
+        description: "Stakeholders recognized the team's contribution.",
+      },
+    ] satisfies TimelineEvent[],
+  },
+  moments: {
+    title: 'Recognition Moments',
+  },
+  howILead: {
+    title: 'How I Lead',
+    statements: [
+      {
+        title: 'I Make People Visible',
+        description:
+          'I intentionally recognize the people whose contributions may otherwise go unnoticed.',
+      },
+      {
+        title: 'I Celebrate Together',
+        description: 'When the team succeeds, recognition belongs to the team.',
+      },
+      {
+        title: 'I Encourage Appreciation',
+        description: 'I create opportunities for team members to recognize one another.',
+      },
+      {
+        title: 'I Share the Credit',
+        description:
+          "Leadership should amplify the team's accomplishments rather than take ownership of them.",
+      },
+    ],
+  },
+  quote: {
+    text: "The best recognition is not always about being recognized yourself. Sometimes it's about making sure the people around you receive the recognition they deserve.",
+    author: 'Rachel Relox',
+    role: 'Leadership Philosophy',
+  },
+};
 
 export const philosophy = {
   quote: 'Great products happen when people, business goals, and technology work together.',

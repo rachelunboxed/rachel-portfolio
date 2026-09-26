@@ -8,30 +8,9 @@ import {
   uploadProjectVideo,
   uploadResume,
 } from './github';
-
-type Status =
-  | { kind: 'idle' }
-  | { kind: 'uploading' }
-  | { kind: 'success'; commitUrl: string }
-  | { kind: 'error'; message: string };
-
-function StatusMessage({ status }: { status: Status }) {
-  if (status.kind === 'success') {
-    return (
-      <p className="mt-4 text-sm font-medium text-emerald-600 dark:text-emerald-400">
-        Uploaded. The site will rebuild automatically.{' '}
-        <a href={status.commitUrl} target="_blank" rel="noopener noreferrer" className="underline">
-          View the commit
-        </a>
-        .
-      </p>
-    );
-  }
-  if (status.kind === 'error') {
-    return <p className="mt-4 text-sm font-medium text-red-600 dark:text-red-400">{status.message}</p>;
-  }
-  return null;
-}
+import MomentsCard from './MomentsCard';
+import { StatusMessage, type Status } from './status';
+import TimelinePhotoCard from './TimelinePhotoCard';
 
 function ResumeUploadCard({ token }: { token: string }) {
   const [file, setFile] = useState<File | null>(null);
@@ -159,13 +138,13 @@ export default function SettingsApp() {
 
   return (
     <div className="min-h-screen bg-bg text-text">
-      <div className="container-page max-w-xl py-16 md:py-24">
+      <div className="mx-auto w-full max-w-2xl px-6 py-16 md:py-24">
         <p className="text-xs font-semibold uppercase tracking-wider text-gradient">Site Settings</p>
-        <h1 className="mt-2 text-2xl font-bold text-navy md:text-3xl">Upload CV & project videos</h1>
+        <h1 className="mt-2 text-2xl font-bold text-navy md:text-3xl">CV, videos & recognition</h1>
         <p className="mt-3 text-sm leading-relaxed text-muted">
-          Both uploads below commit directly to <code className="text-xs">{REPO_NAME}</code> via the
+          Everything below commits directly to <code className="text-xs">{REPO_NAME}</code> via the
           GitHub API. The site rebuilds and updates automatically within a minute or two of a
-          successful upload.
+          successful change.
         </p>
 
         <div className="mt-10 rounded-2xl border border-border bg-surface p-6">
@@ -226,6 +205,8 @@ export default function SettingsApp() {
 
         <ResumeUploadCard token={token} />
         <ProjectVideoUploadCard token={token} />
+        <TimelinePhotoCard token={token} />
+        <MomentsCard token={token} />
 
         <p className="mt-8 text-xs text-muted">
           This page isn't linked from the main site and isn't meant to be shared.

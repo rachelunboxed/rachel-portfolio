@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Maximize2, X } from 'lucide-react';
+import { useAssetExists } from '../hooks/useAssetExists';
 
 type ProjectVideoProps = {
   projectId: string;
@@ -8,24 +9,9 @@ type ProjectVideoProps = {
 };
 
 export default function ProjectVideo({ projectId, title }: ProjectVideoProps) {
-  const [available, setAvailable] = useState<boolean | null>(null);
   const [expanded, setExpanded] = useState(false);
   const src = `${import.meta.env.BASE_URL}media/projects/${projectId}.mp4`;
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch(src, { method: 'HEAD' })
-      .then((res) => {
-        const isVideo = res.ok && (res.headers.get('content-type') ?? '').startsWith('video/');
-        if (!cancelled) setAvailable(isVideo);
-      })
-      .catch(() => {
-        if (!cancelled) setAvailable(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [src]);
+  const available = useAssetExists(src, 'video/');
 
   useEffect(() => {
     if (!expanded) return;

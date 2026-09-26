@@ -11,6 +11,7 @@ import Philosophy from './components/Philosophy';
 import ProductProcess from './components/ProductProcess';
 import ResumeCTA from './components/ResumeCTA';
 import Skills from './components/Skills';
+import TeamRecognition from './components/recognition/TeamRecognition';
 import TrustStrip from './components/TrustStrip';
 import WhatIBring from './components/WhatIBring';
 import { useTheme } from './hooks/useTheme';
@@ -31,6 +32,7 @@ function App() {
         <CaseStudies />
         <ProductProcess />
         <AISection />
+        <TeamRecognition />
         <Certifications />
         <Philosophy />
         <ResumeCTA />

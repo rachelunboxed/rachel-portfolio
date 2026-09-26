@@ -45,7 +45,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
           {profile.name}
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-8 xl:flex">
           {navLinks.map((link) => {
             const id = link.href.replace('#', '');
             const isActive = activeId === id;
@@ -69,7 +69,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <a
             href={profile.resumeUrl}
@@ -81,7 +81,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button
             type="button"
@@ -102,7 +102,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="overflow-hidden border-t border-border bg-surface lg:hidden"
+            className="overflow-hidden border-t border-border bg-surface xl:hidden"
           >
             <nav className="container-page flex flex-col gap-1 py-4">
               {navLinks.map((link) => (
